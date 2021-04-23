@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /
+  - source: ./mkyong.war
     destination: /opt/tomcat/webapps/
     overwrite: true
 permissions:
