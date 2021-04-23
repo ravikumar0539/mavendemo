@@ -12,9 +12,3 @@ permissions:
     mode: 766
     type:
       - file
-
-hooks:
-  BeforeInstall:
-    - location: remove_old.sh
-  AfterInstall:
-    - location: startup.sh
