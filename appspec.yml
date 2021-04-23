@@ -1,0 +1,20 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/tomcat/webapps/
+    overwrite: true
+permissions:
+  - object: /opt/tomcat/webapps
+    pattern: "*.war"
+    owner: tomcat
+    group: tomcat
+    mode: 766
+    type:
+      - file
+
+hooks:
+  BeforeInstall:
+    - location: remove_old.sh
+  AfterInstall:
+    - location: startup.sh
