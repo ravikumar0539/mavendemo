@@ -1,0 +1,11 @@
+- name: AnsibleTomcat
+  hosts: tomcatapp
+  become: True
+  remote_user: ubuntu
+  tasks:
+     - name: copying tomcat files 
+       copy:
+         src:  target/mkyong.war
+         dest: /var/lib/tomcat8/webapps/mkyong.war
+         owner: tomcat8
+         group: tomcat8
